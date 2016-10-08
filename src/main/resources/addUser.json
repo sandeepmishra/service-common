@@ -1,0 +1,15 @@
+{
+        "firstName":"sandeep",
+        "userEmail":"sandeepmishra@abc.com",
+        "contact":"9591188298",
+        "addresses":[
+            {
+                "addressLine1":"A-113",
+                "street":"chinnapanhalli",
+                "city":"Bangalore",
+                "state":"karnataka",
+                "zip":"560037"
+            }
+        ]
+    }
+
