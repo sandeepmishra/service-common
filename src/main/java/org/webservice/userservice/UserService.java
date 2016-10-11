@@ -1,6 +1,7 @@
 package org.webservice.userservice;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -13,6 +14,7 @@ import javax.ws.rs.core.Response;
 
 import org.springframework.stereotype.Service;
 import org.webservice.userbean.UserBean;
+import org.webservice.utils.CsvReader;
 
 @Path("/userservice")
 @Produces("application/json")
@@ -31,10 +33,17 @@ public class UserService {
 	
 	@POST
 	@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    @Path("/adduser")
+    @Path("/userinfo")
     public Response registerUser(UserBean userBean){
 		userBean.setUserId(new BigDecimal("26"));
 		return Response.status(200).entity(userBean).build();
+	}
+	
+	@GET
+    @Path("/returncsvuser")
+    public Response returnCsvUser(){
+		List<UserBean> beanList =new CsvReader().csvToList("csv/user.csv");
+		return Response.status(200).entity(beanList).build();
 	}
 }
 

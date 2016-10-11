@@ -12,8 +12,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "userId",
     "firstName",
+    "lastName",
     "userEmail",
     "contact",
+    "passwrod",
+    "userName",
     "addresses"
 })
 @XmlRootElement(name = "UserBean")
@@ -21,8 +24,11 @@ public class UserBean {
 
 	private BigDecimal userId;
 	private String firstName;
+	private String lastName;
 	private String userEmail;
 	private String contact;
+	private String passwrod;
+	private String userName;
 	
 	private List<UserAddresses> addresses;
 	
@@ -54,5 +60,28 @@ public class UserBean {
 	public List<UserAddresses> getAddresses() {
 		return addresses;
 	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getPasswrod() {
+		return passwrod;
+	}
+	public void setPasswrod(String passwrod) {
+		this.passwrod = passwrod;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
 }
